@@ -18,7 +18,7 @@ App.get('/chat' , (req, res) =>{
     // )
 })
 
-App.get('chat/:id' ,(req,res) => {
+App.get('chats/:id' ,(req,res) => {
     const chat =  chats.filter((ch) => ch._id === req.params.id )
     res.send(chat);
 })
