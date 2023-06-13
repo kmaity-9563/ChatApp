@@ -1,8 +1,10 @@
 // messageModel - sender , content , chat, timestamps
 
-import { schema, model } from "mongoose";
+const mongoose = require("mongoose");
+const { Schema } = mongoose;
 
-const messageSChemas = new schema(
+
+const messageSChemas = new Schema(
   {
     sender: {
       type: mongoose.Schema.Types.ObjectId,
@@ -28,4 +30,4 @@ const messageSChemas = new schema(
 
 const message = model("Message", messageSChemas);
 
-export default message;
+module.exports = message;

@@ -1,8 +1,10 @@
 // Chatmodel - chatName , isGroupchat , users(usr) ,latestmssage(message) , groupadmin(user),timestamps
 
-import { default as mongoose } from "mongoose";
+const mongoose = require("mongoose");
+const { Schema } = mongoose;
 
-const chatSchema = new mongoose.Schema(
+
+const chatSchema = new Schema(
   {
     chatName: {
       type: "string",
@@ -34,4 +36,4 @@ const chatSchema = new mongoose.Schema(
 
 const chat = mongoose.model("chat", chatSchema);
 
-export default chat;
+module.exports = chat;
