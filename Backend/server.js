@@ -1,15 +1,18 @@
 const express = require('express');
 const {chats} = require('./data/data.js');
 // const connectdb = require('./config/db')
-// const mongoose = require('mongoose');
+const mongoose = require('mongoose');
 // const userRoutes = require('./routes/userRoutes').registerUser 
 const user = require('./controller/userController').registerUser 
 
-// require('dotenv').config();
+
+
+require('dotenv').config();
 // connectdb();
 const App = express()
 
-App.use(express.json()); 
+App.use(express.json());
+//  to accept the json data
 const PORT = process.env.PORT || 5000;
 
 App.get('/api', (req, res) =>{
@@ -34,8 +37,7 @@ App.use('/api/user' ,user);
 //     res.send(chat);
 // })
 App.listen(PORT, () => {
-    console.log(`listening on port ${PORT}`)
-//  await connection;
+    console.log(`listening on port ${PORT}`);
 })
 
 
