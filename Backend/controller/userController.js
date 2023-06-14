@@ -3,7 +3,7 @@ const userModel = require("../models/userModel");
 const generatToken = require('../config/generatToken')
 // const { error } = require("console");
 
-const registerUser = asyncHandler( async (req, res) => {
+const registerUser = asyncHandler( async (req, res, next) => {
   // res.status(200).json({"done" : "ohhh yeahhh... bho.."});
   // console.log('LOGGED');
   // next();
@@ -42,6 +42,8 @@ const registerUser = asyncHandler( async (req, res) => {
   } else {
     res.status(400).json({ "user not found": error });
   }
-});
+  next();
+}
+);
 
 module.exports = { registerUser: registerUser };
