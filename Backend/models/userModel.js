@@ -10,9 +10,9 @@ const userModel = new Schema(
     name: {
       type: String, required: true 
     },
-    emailId: {
+    email: {
       type: String,  required: true ,
-      unique: true
+      // unique: true
       // validate: {
       //   validator: function (value) {
       //     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
